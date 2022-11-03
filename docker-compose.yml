@@ -6,7 +6,7 @@ services:
     image: mysql:8
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: pwd1234
     volumes:
      -  /home/mysqldata:/var/lib/mysql
 
