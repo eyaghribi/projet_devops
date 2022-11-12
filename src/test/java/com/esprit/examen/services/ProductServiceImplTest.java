@@ -128,7 +128,7 @@ public class ProductServiceImplTest {
 		this.modelMapper = new ModelMapper();
 		
 		produitService.assignProduitToStock(p2.getIdProduit(), p2.getStock().getIdStock());
-		assertNotNull(p2);
+		System.out.print(assertNotNull(p2));
 		assertEquals(p2.getStock().getIdStock(),s1.getIdStock());
 	}
 	
@@ -136,6 +136,7 @@ public class ProductServiceImplTest {
 	public void deleteProduit() {
 		init();
 		Long ProduitId = 1L;
+		
 		when(produitRepository.findById(anyLong())).thenReturn(Optional.of(p1));
 		doNothing().when(produitRepository).deleteById(anyLong());
 		produitService.deleteProduit(ProduitId);
