@@ -128,6 +128,7 @@ public class ProductServiceImplTest {
 		this.modelMapper = new ModelMapper();
 		
 		produitService.assignProduitToStock(p2.getIdProduit(), p2.getStock().getIdStock());
+		assertNotNull(p2);
 		assertEquals(p2.getStock().getIdStock(),s1.getIdStock());
 	}
 	
