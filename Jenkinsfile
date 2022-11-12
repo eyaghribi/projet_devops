@@ -90,7 +90,7 @@ pipeline {
                 stage('Login to DockerHub') {
                     steps{
                         dir('.'){
-                            sh 'docker login -u ramziberriri -p Azertylong123;'
+                            sh 'docker login -u ramziberriri -p Azerty-long123'
                             }
                         }
                     }
