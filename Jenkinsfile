@@ -80,5 +80,33 @@ pipeline {
                 }
             }
         }
+        stage('Building Docker Image') {
+                    steps {
+                        dir('Spring/tpAchatProject'){
+                            sh 'docker build -t mounah/tpachat .'
+                                }
+                            }
+                        }
+                stage('Login to DockerHub') {
+                    steps{
+                        dir('Spring/tpAchatProject'){
+                            sh 'docker login -u mounah -p mouna25499'
+                            }
+                        }
+                    }
+                stage('Push to DockerHub') {
+                    steps{
+                        dir('Spring/tpAchatProject'){
+                            sh 'docker push mounah/tpachat'
+                             }
+                        }
+                    }
+                stage('Docker Compose'){
+                    steps{
+                       dir('Spring/tpAchatProject'){
+                            sh 'docker-compose up -d'
+                            }
+                       }
+                    }
     }
 }
