@@ -92,6 +92,7 @@ public class ProductServiceImplTest {
 	
 	@Test
 	public void getProduitById() {
+		
 		init();
 		when(produitRepository.save(any(Produit.class))).thenReturn(p1);
 		ProduitDTO prm=modelMapper.map(p1, ProduitDTO.class);
