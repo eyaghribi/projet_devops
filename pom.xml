@@ -22,6 +22,10 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	<properties>
+               <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        </properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -83,6 +87,13 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!-- Failed to execute goal org.apache.maven.plugins:maven-resources-plugin:3.2.0:resources (default-resources) on project application-etude: Input length = 1 -->   
+            
+                        <plugin>
+    				<groupId>org.apache.maven.plugins</groupId>
+    				<artifactId>maven-resources-plugin</artifactId>
+    				<version>3.1.0</version>
+			</plugin>  
 		</plugins>
 	</build>
 
