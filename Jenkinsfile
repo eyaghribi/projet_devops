@@ -4,9 +4,9 @@ pipeline {
     stages {
 	    stage('maven version ') {
 			steps {
-				sh 'mvn −version  '
+				sh "mvn −version"
 			}
-        
+	    }
        stage('Build Artifact - Maven') {
 			
 	       steps {		
