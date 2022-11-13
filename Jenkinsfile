@@ -5,9 +5,9 @@ pipeline {
         
        stage('Build Artifact - Maven') {
 			
-	       steps {		withMaven(maven: 'mvn'){
+	       steps {		
 				sh "mvn clean package -DskipTests=true"
-		       archive 'target/*.jar'}
+		       archive 'target/*.jar'
 			}
 		}
     }
