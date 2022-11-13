@@ -4,13 +4,13 @@ pipeline {
     stages {
 	    stage('maven version ') {
 			steps {
-				sh "maven −version"
+				sh "mvn −version"
 			}
 	    }
        stage('Build Artifact - Maven') {
 			
 	       steps {		
-				sh "maven clean package -DskipTests=true"
+				sh "mvn clean package -DskipTests=true"
 		       archive 'target/*.jar'
 			}
 		}
