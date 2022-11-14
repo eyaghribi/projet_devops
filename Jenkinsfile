@@ -10,12 +10,12 @@ pipeline {
 		       archive 'target/*.jar'
 			}
 		}
-	    /*stage('SonarQube Test') {
+	    stage('SonarQube Test') {
 			steps {
 			
-				sh "mvn sonar:sonar -Dsonar.projectKey=springapp -Dsonar.host.url=http://192.168.33.10:9000 -Dsonar.login=d9836be6315b0f0764097ca520c4bdb36017e1a6"
+				sh "mvn sonar:sonar -Dsonar.projectKey=springapp -Dsonar.host.url=http://192.168.33.10:9000 -Dsonar.login=4d2bd399c7b05c9b0291e2d4372f5cbd72d8dddd"
 			}
-			}*/
+			}
 	    stage('Docker Build and Push') {
        steps {
          withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
