@@ -1,15 +1,14 @@
-version: '3.3'
+version: '3.7'
 services:
 
   ci-db:
     container_name: ci-db
     image: mysql:8.0
-    networks:
-      - ci-network
+
     environment:
       - MYSQL_USER=new_user
       - MYSQL_PASSWORD=password
-      - MYSQL_DATABASE=achatdb
+      - MYSQL_DATABASE=eyacherni
       - MYSQL_ROOT_PASSWORD=root
     volumes:
       - dbvol:/var/lib/mysql
@@ -24,8 +23,6 @@ services:
     image: tpachat/ci:latest
     ports:
       - "8089:8089"
-    networks:
-      - ci-network
     depends_on:
       - ci-db
     environment:
@@ -36,9 +33,7 @@ services:
       - MYSQL_PORT=3306
       
 
-networks:
-  ci-network:
-    name: ci-network
+
 
 volumes:
   dbvol:
