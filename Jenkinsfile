@@ -15,6 +15,8 @@ pipeline {
          )
        }
      }
+    }
+}
 /*
 	  
        stage('Build Artifact - Maven') {
