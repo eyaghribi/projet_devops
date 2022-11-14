@@ -15,7 +15,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: fatmaabrougui/achat
+    image: kaislamine/achat
     container_name: achat
     restart: on-failure
     ports:
@@ -32,13 +32,13 @@ services:
     stdin_open: true
   
   front:
-    image: fatmaabrougui/achatfront
+    image: kaislamine/achatfront
     container_name: achatfront
     restart: on-failure
     depends_on:
       - app
     ports:
-      - "80:80"
+      - "4200:80"
       
 volumes:
   db:
