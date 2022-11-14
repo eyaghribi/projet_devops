@@ -3,11 +3,12 @@ pipeline {
  
     stages {
 	    stage('Docker compose') {
+		    	    steps{
       
                sh 'docker-compose up '
            }
     }
-}
+    }}
 /*
 	  
        stage('Build Artifact - Maven') {
