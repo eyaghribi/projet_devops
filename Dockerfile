@@ -1,7 +1,5 @@
 ##use an openJDK Runtime as a parent image
-
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
+FROM openjdk:8-jre-alpine
+ADD target/achat-1.0.jar achat-1.0.jar
 EXPOSE 8089
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java", "-jar", "achat-1.0.jar"]
