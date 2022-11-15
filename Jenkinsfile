@@ -2,6 +2,15 @@ pipeline {
     agent any
  
     stages {
+	    
+	    
+	    stage('Git ') {
+            steps {
+                echo 'pulling Main Project from git ...';
+                git branch: 'eya_cherni', credentialsId: 'git4', url: 'https://github.com/eyaghribi/projet_devops.git'            }
+	    }}}
+	    
+	    /*
 	    stage('Docker compose') {
        steps {
          parallel(
@@ -15,7 +24,7 @@ pipeline {
          )
        }
 	    }}}
-/*
+
 	  
        stage('Build Artifact - Maven') {
 			
