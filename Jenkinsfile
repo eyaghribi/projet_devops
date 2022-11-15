@@ -8,22 +8,10 @@ pipeline {
             steps {
                 echo 'pulling Main Project from git ...';
                 git branch: 'eya_cherni', credentialsId: 'git4', url: 'https://github.com/eyaghribi/projet_devops.git'            }
-	    }}}
+	    }
 	    
-	    /*
-	    stage('Docker compose') {
-       steps {
-         parallel(
-           "Docker compose": {
-               sh 'docker-compose up '
-           },
-           "Delete running containers": {
-		       sh 'sleep 2m '
-               sh 'docker rm -f ci-spring ci-db  '
-           }
-         )
-       }
-	    }}}
+	    
+	  
 
 	  
        stage('Build Artifact - Maven') {
@@ -53,7 +41,20 @@ pipeline {
 				sh'mvn clean deploy -Dmaven.test.skip=true -Dresume=false'
 			        }
 	                } 
+	     stage('Docker compose') {
+       steps {
+         parallel(
+           "Docker compose": {
+               sh 'docker-compose up '
+           },
+           "Delete running containers": {
+		       sh 'sleep 2m '
+               sh 'docker rm -f ci-spring ci-db  '
+           }
+         )
+       }
+	    }
 		
 	
     }
-}*/
+}
